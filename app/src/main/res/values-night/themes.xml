@@ -1,0 +1,16 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.RTES" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#FDD835</item>
+        <item name="colorPrimaryVariant">#FDD835</item>
+        <item name="colorOnPrimary">#FDD835</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#FBC02D</item>
+        <item name="colorSecondaryVariant">#FBC02D</item>
+        <item name="colorOnSecondary">#FBC02D</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">#FFA000</item>
+        <!-- Customize your theme here. -->
+    </style>
+</resources>

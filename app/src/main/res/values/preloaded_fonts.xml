@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/alatsi</item>
+        <item>@font/amaranth</item>
+        <item>@font/amethysta</item>
+        <item>@font/bangers</item>
+        <item>@font/roboto_bold</item>
+        <item>@font/roboto_medium_italic</item>
+        <item>@font/roboto_slab_thin</item>
+        <item>@font/roboto_thin</item>
+    </array>
+</resources>

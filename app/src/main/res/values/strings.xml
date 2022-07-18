@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">RTES</string>
+    <string name="Dashboard">TextView</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="tracking_your_bus_made_easier">Tracking your Bus made easier!</string>
+    <string name="cancelled_buses">Cancelled Buses</string>
+    <string name="spot_your_bus">Spot Your Bus</string>
+    <string name="bus_schedule">Bus Schedule</string>
+    <string name="rescheduled_buses">Rescheduled Buses</string>
+    <string name="todo">TODO</string>
+    <string name="portal">----------- PORTAL -----------</string>
+    <string name="logo">logo</string>
+    <string name="logo_1">logo</string>
+    <string name="live_bus_stand">Live Bus Stand</string>
+    <string name="diverted_buses">Diverted Buses</string>
+    <string name="book_tickets">Book Tickets</string>
+    <string name="notices">Notices</string>
+    <string name="my_tickets">My Tickets</string>
+</resources>

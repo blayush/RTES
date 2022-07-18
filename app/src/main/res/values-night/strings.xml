@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Dashboard">TextView</string>
+    <string name="rescheduled_buses">Rescheduled Buses</string>
+    <string name="todo">TODO</string>
+    <string name="logo">logo</string>
+    <string name="logo_1">logo</string>
+    <string name="live_bus_stand">Live Bus Stand</string>
+</resources>
