@@ -3,9 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/91930/AndroidStudioProjects/RTES/app/src/main/res/drawable/busdetails_gradient.xml" value="0.2545" />
+        <entry key="..\:/Users/91930/AndroidStudioProjects/RTES/app/src/main/res/drawable/button_gradient.xml" value="0.1" />
         <entry key="..\:/Users/91930/AndroidStudioProjects/RTES/app/src/main/res/drawable/button_gradient_1.xml" value="0.2555" />
         <entry key="..\:/Users/91930/AndroidStudioProjects/RTES/app/src/main/res/drawable/dash_bar.xml" value="0.2555" />
-        <entry key="..\:/Users/91930/AndroidStudioProjects/RTES/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/Users/91930/AndroidStudioProjects/RTES/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/91930/AndroidStudioProjects/RTES/app/src/main/res/layout/activity_schedule.xml" value="0.4" />
+        <entry key="..\:/Users/91930/AndroidStudioProjects/RTES/app/src/main/res/layout/single_stop_view.xml" value="0.4" />
       </map>
     </option>
   </component>

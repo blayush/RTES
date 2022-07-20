@@ -179,20 +179,22 @@
         android:orientation="horizontal">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/busScheduleCV"
             android:layout_width="160dp"
             android:layout_height="120dp"
             android:layout_weight="1"
             app:cardCornerRadius="8dp"
-            app:cardElevation="5dp">
+            app:cardElevation="5dp"
+            tools:ignore="DuplicateClickableBoundsCheck">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/button_gradient_1"
-                android:clickable="true"
-                android:contextClickable="true"
-                android:padding="8dp"
-                android:focusable="true">
+                android:clickable="false"
+                android:contextClickable="false"
+                android:focusable="true"
+                android:padding="8dp">
 
                 <TextView
                     android:layout_width="wrap_content"

@@ -16,4 +16,12 @@
     <string name="book_tickets">Book Tickets</string>
     <string name="notices">Notices</string>
     <string name="my_tickets">My Tickets</string>
+    <string name="bus_number">Bus Number</string>
+    <string name="cantt">Cantt</string>
+    <string name="from">From :</string>
+    <string name="check">Check</string>
+    <string name="ordinary_mini_bus">Ordinary Mini Bus</string>
+    <string name="bus_type">Bus Type :</string>
+    <string name="lanka">Lanka</string>
+    <string name="to">To :</string>
 </resources>
