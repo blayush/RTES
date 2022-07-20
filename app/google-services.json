@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "39320971873",
+    "firebase_url": "https://rtes-d4e50-default-rtdb.firebaseio.com",
+    "project_id": "rtes-d4e50",
+    "storage_bucket": "rtes-d4e50.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:39320971873:android:c2fe1541ca3c3b33a1d820",
+        "android_client_info": {
+          "package_name": "com.example.rtes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "39320971873-honh801odb1bmrfmer4k2icj14qk6ve8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQ25ban1s7YhpGqR0hbJSN6xOc6ausaU0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "39320971873-honh801odb1bmrfmer4k2icj14qk6ve8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
