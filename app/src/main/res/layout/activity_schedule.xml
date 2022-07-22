@@ -101,7 +101,8 @@
                     android:fontFamily="@font/alatsi"
                     android:gravity="center"
                     android:text="@string/bus_type"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="NestedWeights" />
 
                 <TextView
                     android:id="@+id/bustypeTextView"

@@ -8,19 +8,22 @@ import android.os.Bundle;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
-    CardView busScheduleBtn;
+    CardView busScheduleBtn,spotBusBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         busScheduleBtn=findViewById(R.id.busScheduleCV);
-        busScheduleBtn.setOnClickListener(new View.OnClickListener() {
+        spotBusBtn=findViewById(R.id.spotBusBtn);
 
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ScheduleActivity.class);
-                startActivity(intent);
-            }
+        spotBusBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, SpotActivity.class);
+            startActivity(intent);
+        });
+
+        busScheduleBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, ScheduleActivity.class);
+            startActivity(intent);
         });
     }
 }
