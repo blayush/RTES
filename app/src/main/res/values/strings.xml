@@ -24,4 +24,5 @@
     <string name="bus_type">Bus Type :</string>
     <string name="lanka">Lanka</string>
     <string name="to">To :</string>
+    <string name="spot">Spot</string>
 </resources>

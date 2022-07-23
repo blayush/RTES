@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
+        <item>@font/adamina</item>
+        <item>@font/alata</item>
         <item>@font/alatsi</item>
         <item>@font/amaranth</item>
         <item>@font/amethysta</item>
         <item>@font/bangers</item>
+        <item>@font/blinker_semibold</item>
+        <item>@font/brawler</item>
         <item>@font/roboto_bold</item>
         <item>@font/roboto_bold_italic</item>
         <item>@font/roboto_medium_italic</item>
