@@ -1,13 +1,12 @@
 package com.example.rtes;
 
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.rtes.Fragments.StopListFragment;
 import com.example.rtes.Models.StopsModel;
 import com.example.rtes.databinding.ActivitySpotBinding;
 import com.google.firebase.database.DataSnapshot;
@@ -48,38 +47,40 @@ public class SpotActivity extends AppCompatActivity {
             ref.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    binding.busTypeTV.setText(snapshot.child("bustype").getValue().toString());
-                    binding.viaTV.setText(String.format("Via - %s", snapshot.child("via").getValue().toString()));
-                    binding.fromTV.setText(snapshot.child("from").getValue().toString());
-                    binding.toTV.setText(snapshot.child("to").getValue().toString());
+                    if(snapshot.exists()) {
+                        binding.busTypeTV.setText(snapshot.child("bustype").getValue().toString());
+                        binding.viaTV.setText(String.format("Via - %s", snapshot.child("via").getValue().toString()));
+                        binding.fromTV.setText(snapshot.child("from").getValue().toString());
+                        binding.toTV.setText(snapshot.child("to").getValue().toString());
 
-                    int i=0,idx=-1;
-                    for(DataSnapshot dataSnapshot:snapshot.child("stops").getChildren()){
-                        StopsModel stopsModel=dataSnapshot.getValue(StopsModel.class);
-                        if(stopsModel.getStatus()==1)idx=i;
-                        stopsList.add(stopsModel);
-                        i++;
-                    }
-                    binding.currentStopTV.setText(stopsList.get(idx).getStopname());
-                    if(idx!=i-1)binding.nextStopTV.setText(stopsList.get(idx+1).getStopname());
-                    else binding.nextStopTV.setText("Last Stop");
-
-                    String currentTime = new SimpleDateFormat("HH:mm a", Locale.getDefault()).format(new Date());
-                    long mins=getDiff(stopsList.get(idx).getTime(),currentTime);
-                    if(mins==0)binding.delayTV.setText("On Time");
-                    else {
-                        if(mins>= 60L){
-
-                            long hrs=mins/60;
-                            mins=mins%60;
-                            binding.delayTV.setText(String.format("Delayed by %s hours %s minutes", hrs, mins));
+                        int i = 0, idx = -1;
+                        for (DataSnapshot dataSnapshot : snapshot.child("stops").getChildren()) {
+                            StopsModel stopsModel = dataSnapshot.getValue(StopsModel.class);
+                            if (stopsModel.getStatus() == 1) idx = i;
+                            stopsList.add(stopsModel);
+                            i++;
                         }
+                        binding.currentStopTV.setText(stopsList.get(idx).getStopname());
+                        if (idx != i - 1)
+                            binding.nextStopTV.setText(stopsList.get(idx + 1).getStopname());
+                        else binding.nextStopTV.setText("Last Stop");
+
+                        String currentTime = new SimpleDateFormat("HH:mm a", Locale.getDefault()).format(new Date());
+                        long mins = getDiff(stopsList.get(idx).getTime(), currentTime);
+                        if (mins == 0) binding.delayTV.setText("On Time");
                         else {
-                            binding.delayTV.setText(String.format("Delayed by %s minutes", mins));
+                            if (mins >= 60L) {
+
+                                long hrs = mins / 60;
+                                mins = mins % 60;
+                                binding.delayTV.setText(String.format("Delayed by %s hours %s minutes", hrs, mins));
+                            } else {
+                                binding.delayTV.setText(String.format("Delayed by %s minutes", mins));
 //                            Toast.makeText(getApplicationContext(),Long.toString(mins),Toast.LENGTH_SHORT).show();
+                            }
                         }
+                        binding.schTimeTV.setText(stopsList.get(idx).getTime());
                     }
-                    binding.schTimeTV.setText(stopsList.get(idx).getTime());
 
                 }
 
@@ -98,9 +99,13 @@ public class SpotActivity extends AppCompatActivity {
 
         });
 
+        binding.showListBtn.setOnClickListener(view1 -> {
+            StopListFragment stopListFragment = new StopListFragment();
+            stopListFragment.show(getSupportFragmentManager(),"stopListFragment");
+        });
+
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     public long getDiff(String t1, String t2){
         DateTimeFormatter format = DateTimeFormatter.ofPattern("h:m a");
 

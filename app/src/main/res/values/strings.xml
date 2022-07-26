@@ -25,4 +25,7 @@
     <string name="lanka">Lanka</string>
     <string name="to">To :</string>
     <string name="spot">Spot</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="live_map">Live Map</string>
 </resources>
