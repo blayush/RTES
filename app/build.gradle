@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.rtes"
-        minSdk 24
+        minSdk 26
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -27,7 +27,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     buildFeatures {
-        viewBinding = true;
+        viewBinding = true
     }
 }
 

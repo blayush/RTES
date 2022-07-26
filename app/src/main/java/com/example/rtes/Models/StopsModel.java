@@ -1,14 +1,26 @@
 package com.example.rtes.Models;
 
 public class StopsModel {
-    String stopname,time;
+    String stopname;
+    String time;
+    int status;
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+
 
     public StopsModel() {
     }
 
-    public StopsModel(String stopname, String time) {
+    public StopsModel(String stopname, String time,int status) {
         this.stopname = stopname;
         this.time = time;
+        this.status=status;
     }
 
     public String getStopname() {
