@@ -6,6 +6,7 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.rtes.Fragments.ShowMapFragment;
 import com.example.rtes.Fragments.StopListFragment;
 import com.example.rtes.Models.StopsModel;
 import com.example.rtes.databinding.ActivitySpotBinding;
@@ -13,6 +14,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Transaction;
 import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
@@ -27,6 +29,7 @@ public class SpotActivity extends AppCompatActivity {
 
     private DatabaseReference rootRef;
     private Boolean flag;
+    private  String busNum;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -41,8 +44,9 @@ public class SpotActivity extends AppCompatActivity {
 
         binding.spotBtn.setOnClickListener(view1 -> {
 
+
             ArrayList<StopsModel> stopsList= new ArrayList<>();
-            String busNum=binding.busNumEditText.getText().toString();
+            busNum=binding.busNumEditText.getText().toString();
             DatabaseReference ref=rootRef.child("schedule").child(busNum);
             ref.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
@@ -65,20 +69,20 @@ public class SpotActivity extends AppCompatActivity {
                             binding.nextStopTV.setText(stopsList.get(idx + 1).getStopname());
                         else binding.nextStopTV.setText("Last Stop");
 
-                        String currentTime = new SimpleDateFormat("HH:mm a", Locale.getDefault()).format(new Date());
-                        long mins = getDiff(stopsList.get(idx).getTime(), currentTime);
-                        if (mins == 0) binding.delayTV.setText("On Time");
-                        else {
-                            if (mins >= 60L) {
-
-                                long hrs = mins / 60;
-                                mins = mins % 60;
-                                binding.delayTV.setText(String.format("Delayed by %s hours %s minutes", hrs, mins));
-                            } else {
-                                binding.delayTV.setText(String.format("Delayed by %s minutes", mins));
-//                            Toast.makeText(getApplicationContext(),Long.toString(mins),Toast.LENGTH_SHORT).show();
-                            }
-                        }
+                        String currentTime = new SimpleDateFormat("hh:mm a", Locale.getDefault()).format(new Date());
+//                        long mins = getDiff(stopsList.get(idx).getTime(), currentTime);
+//                        if (mins == 0) binding.delayTV.setText("On Time");
+//                        else {
+//                            if (mins >= 60L) {
+//
+//                                long hrs = mins / 60;
+//                                mins = mins % 60;
+//                                binding.delayTV.setText(String.format("Delayed by %s hours %s minutes", hrs, mins));
+//                            } else {
+//                                binding.delayTV.setText(String.format("Delayed by %s minutes", mins));
+////                            Toast.makeText(getApplicationContext(),Long.toString(mins),Toast.LENGTH_SHORT).show();
+//                            }
+//                        }
                         binding.schTimeTV.setText(stopsList.get(idx).getTime());
                     }
 
@@ -101,7 +105,15 @@ public class SpotActivity extends AppCompatActivity {
 
         binding.showListBtn.setOnClickListener(view1 -> {
             StopListFragment stopListFragment = new StopListFragment();
+            Bundle bundle=new Bundle();
+            bundle.putString("busNum",busNum);
+            stopListFragment.setArguments(bundle);
             stopListFragment.show(getSupportFragmentManager(),"stopListFragment");
+        });
+
+        binding.showMapBtn.setOnClickListener(view1 -> {
+            ShowMapFragment showMapFragment = new ShowMapFragment();
+            showMapFragment.show(getSupportFragmentManager(),"showMapFragment");
         });
 
     }

@@ -26,9 +26,11 @@
             android:textSize="16.5sp"
             tools:ignore="TextContrastCheck" />
 
-        <androidx.recyclerview.widget.RecyclerView
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/mapView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="8dp" />
+            tools:ignore="SpeakableTextPresentCheck" />
+
     </LinearLayout>
 </LinearLayout>
